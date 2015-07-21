@@ -2,6 +2,7 @@ var spawnLogic = require('spawnLogic');
 var harvester = require('harvester');
 var mule = require('mule');
 var builder = require('builder');
+var defaultCreep = require('defaultCreep');
 
 var harvesters = 2;
 var mules = 4;
@@ -18,7 +19,6 @@ if(Game.spawns.Spawn1.energy >= 300) {
 }
 
 for(var name in Game.creeps) {
-
     var creep = Game.creeps[name];
 
     if(creep.memory.role == 'harvester') {
@@ -26,18 +26,7 @@ for(var name in Game.creeps) {
     } else if(creep.memory.role == 'mule') {
         mule(creep);
     } else if(creep.memory.role == 'builder') {
-
-        if(creep.energy == 0) {
-            creep.moveTo(Game.spawns.Spawn1);
-            Game.spawns.Spawn1.transferEnergy(creep);
-        }
-        else {
-            var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
-            if(targets.length) {
-                creep.moveTo(targets[0]);
-                creep.build(targets[0]);
-            }
-        }
+        builder(creep);
     } else if(creep.memory.role == 'guard') {
         var targets = creep.room.find(FIND_HOSTILE_CREEPS);
         if(targets.length) {
@@ -45,6 +34,6 @@ for(var name in Game.creeps) {
             creep.attack(targets[0]);
         }
     } else {
-        harvester(creep);
+        defaultCreep(creep);
     }
 }

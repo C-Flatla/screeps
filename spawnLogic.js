@@ -16,8 +16,24 @@ module.exports = {
     generateCreep: function (role) {
         var harvesterBody = [WORK, WORK, MOVE, MOVE];
         var muleBody = [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY];
+        var body;
 
-        var body = (role === 'harvester') ? harvesterBody : muleBody;
+        switch(role) {
+            case 'harvester':
+                body = harvesterBody;
+                break;
+            case 'mule':
+                body = muleBody;
+                break;
+            case 'builder':
+                body = builderBody;
+                break;
+            default:
+                body = [WORK, MOVE, CARRY];
+                break;
+        }
+
+        (role === 'harvester') ? harvesterBody : muleBody;
 
         var creepName = Game.spawns.Spawn1.createCreep(body, undefined, {role: role});
     }
