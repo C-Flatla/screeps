@@ -2,7 +2,7 @@ var spawnLogic = require('spawnLogic');
 var harvester = require('harvester');
 var mule = require('mule');
 
-var harvesters = 3;
+var harvesters = 2;
 var mules = 4;
 
 if(Game.spawns.Spawn1.energy >= 300) {
