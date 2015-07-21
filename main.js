@@ -32,6 +32,6 @@ for(var name in Game.creeps) {
             creep.attack(targets[0]);
         }
     } else {
-        harverster(creep);
+        harvester(creep);
     }
 }
