@@ -6,7 +6,7 @@ var defaultCreep = require('defaultCreep');
 
 var harvesters = 2;
 var mules = 4;
-var builders = 2;
+var builders = 10;
 
 if(Game.spawns.Spawn1.energy >= 300) {
     if(spawnLogic.getCreepNumber('harvester') < harvesters) {
