@@ -34,8 +34,6 @@ module.exports = {
                 break;
         }
 
-        (role === 'harvester') ? harvesterBody : muleBody;
-
         var creepName = Game.spawns.Spawn1.createCreep(body, undefined, {role: role});
     }
 };
