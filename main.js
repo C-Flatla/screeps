@@ -1,15 +1,19 @@
 var spawnLogic = require('spawnLogic');
 var harvester = require('harvester');
 var mule = require('mule');
+var builder = require('builder');
 
 var harvesters = 2;
 var mules = 4;
+var builders = 2;
 
 if(Game.spawns.Spawn1.energy >= 300) {
     if(spawnLogic.getCreepNumber('harvester') < harvesters) {
         spawnLogic.generateCreep('harvester');
     } else if(spawnLogic.getCreepNumber('mule') < mules) {
         spawnLogic.generateCreep('mule');
+    } else if(spawnLogic.getCreepNumber('builder') < builders) {
+        spawnLogic.generateCreep('builder');
     }
 }
 
