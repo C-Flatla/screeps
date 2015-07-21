@@ -1,9 +1,16 @@
+var spawnLogic = require('spawnLogic');
 var harvester = require('harvester');
+var mule = require('mule');
 
-var spawn = Game.spawns.Spawn1;
+var harvesters = 2;
+var mules = 3;
 
-if(Object.keys(Game.creeps).length <= 5 && Game.spawns.Spawn1.energy >= 300) {
-    spawn.createCreep([WORK, MOVE, MOVE, CARRY], undefined);
+if(Game.spawns.Spawn1.energy >= 300) {
+    if(harvesters <= spawnLogic.getCreepNumber('harvester')) {
+        spawnLogic.generateCreep('harvester');
+    } else if(mules <= spawnLogic.getCreepNumber('mule')) {
+        spawnLogic.generateCreep('mule');
+    }
 }
 
 for(var name in Game.creeps) {
@@ -12,6 +19,8 @@ for(var name in Game.creeps) {
 
     if(creep.memory.role == 'harvester') {
         harvester(creep);
+    } else if(creep.memory.role == 'mule') {
+        mule(creep);
     } else if(creep.memory.role == 'builder') {
 
         if(creep.energy == 0) {
