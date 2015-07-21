@@ -2,9 +2,8 @@ var harvester = require('harvester');
 
 var spawn = Game.spawns.Spawn1;
 
-if(Game.creeps === {}) {
-    spawn.createCreep(['Work', 'Move', 'Carry'], undefined);
-
+if(Object.keys(Game.creeps).length <= 5) {
+    spawn.createCreep(['WORK', 'MOVE', 'CARRY'], undefined);
 }
 
 for(var name in Game.creeps) {
@@ -13,9 +12,7 @@ for(var name in Game.creeps) {
 
     if(creep.memory.role == 'harvester') {
         harvester(creep);
-    }
-
-    if(creep.memory.role == 'builder') {
+    } else if(creep.memory.role == 'builder') {
 
         if(creep.energy == 0) {
             creep.moveTo(Game.spawns.Spawn1);
@@ -28,13 +25,13 @@ for(var name in Game.creeps) {
                 creep.build(targets[0]);
             }
         }
-    }
-
-    if(creep.memory.role == 'guard') {
+    } else if(creep.memory.role == 'guard') {
         var targets = creep.room.find(FIND_HOSTILE_CREEPS);
         if(targets.length) {
             creep.moveTo(targets[0]);
             creep.attack(targets[0]);
         }
+    } else {
+        harverster(creep);
     }
 }
