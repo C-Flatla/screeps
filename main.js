@@ -2,8 +2,8 @@ var harvester = require('harvester');
 
 var spawn = Game.spawns.Spawn1;
 
-if(Object.keys(Game.creeps).length <= 5) {
-    spawn.createCreep(['WORK', 'MOVE', 'CARRY'], undefined);
+if(Object.keys(Game.creeps).length <= 5 && Game.spawns.Spawn1.energy >= 300) {
+    spawn.createCreep([WORK, MOVE, CARRY], undefined);
 }
 
 for(var name in Game.creeps) {

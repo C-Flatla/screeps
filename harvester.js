@@ -7,7 +7,6 @@
  */
 
  module.exports = function (creep) {
-
     if(creep.energy < creep.energyCapacity) {
         var sources = creep.room.find(FIND_SOURCES);
         creep.moveTo(sources[0]);
