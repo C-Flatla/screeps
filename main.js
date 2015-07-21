@@ -6,9 +6,9 @@ var harvesters = 2;
 var mules = 3;
 
 if(Game.spawns.Spawn1.energy >= 300) {
-    if(spawnLogic.getCreepNumber('harvester') <= harvesters) {
+    if(spawnLogic.getCreepNumber('harvester') < harvesters) {
         spawnLogic.generateCreep('harvester');
-    } else if(spawnLogic.getCreepNumber('mule') <= mules) {
+    } else if(spawnLogic.getCreepNumber('mule') < mules) {
         spawnLogic.generateCreep('mule');
     }
 }
