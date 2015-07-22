@@ -17,6 +17,8 @@ if(Game.spawns.Spawn1.energy >= 300) {
         spawnLogic.generateCreep('mule');
     } else if(spawnLogic.getCreepNumber('upgrader') < upgraders) {
         spawnLogic.generateCreep('upgrader');
+    } else if(spawnLogic.getCreepNumber('builder') < builders) {
+        spawnLogic.generateCreep('builder');
     } else if(spawnLogic.getCreepNumber('guard') < guards) {
         spawnLogic.generateCreep('guard');
     }

@@ -17,6 +17,7 @@ module.exports = {
         var harvesterBody = [WORK, WORK, MOVE, MOVE];
         var muleBody = [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY];
         var upgraderBody = [WORK, CARRY, CARRY, MOVE, MOVE];
+        var builderBody = [WORK, CARRY, CARRY, MOVE, MOVE];
         var body;
 
         switch(role) {
@@ -28,6 +29,9 @@ module.exports = {
                 break;
             case 'upgrader':
                 body = upgraderBody;
+                break;
+            case 'builder':
+                body = builderBody;
                 break;
             default:
                 body = [WORK, MOVE, CARRY];
