@@ -2,6 +2,7 @@ var spawnLogic = require('spawnLogic');
 var harvester = require('harvester');
 var mule = require('mule');
 var upgrader = require('upgrader');
+var builder = require('builder');
 var defaultCreep = require('defaultCreep');
 
 var harvesters = 2;
