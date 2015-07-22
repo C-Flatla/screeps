@@ -16,7 +16,7 @@ module.exports = {
     generateCreep: function (role) {
         var harvesterBody = [WORK, WORK, MOVE, MOVE];
         var muleBody = [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY];
-        var builderBody = [WORK, CARRY, CARRY, MOVE, MOVE];
+        var upgraderBody = [WORK, CARRY, CARRY, MOVE, MOVE];
         var body;
 
         switch(role) {
@@ -26,8 +26,8 @@ module.exports = {
             case 'mule':
                 body = muleBody;
                 break;
-            case 'builder':
-                body = builderBody;
+            case 'upgrader':
+                body = upgraderBody;
                 break;
             default:
                 body = [WORK, MOVE, CARRY];
