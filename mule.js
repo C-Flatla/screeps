@@ -1,5 +1,5 @@
 module.exports = function (creep) {
-    if(creep.energy < creep.energyCapacity) {
+    if(creep.carry.energy < creep.carryCapacity) {
         var energy = creep.room.find(FIND_DROPPED_ENERGY);
         if(energy.length) {
             creep.moveTo(energy[0]);
