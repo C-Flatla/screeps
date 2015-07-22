@@ -34,6 +34,6 @@ module.exports = {
                 break;
         }
 
-        var creepName = Game.spawns.Spawn1.createCreep(body, undefined, {role: role});
+        Game.spawns.Spawn1.createCreep(body, undefined, {role: role});
     }
 };

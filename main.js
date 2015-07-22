@@ -6,7 +6,8 @@ var defaultCreep = require('defaultCreep');
 
 var harvesters = 2;
 var mules = 2;
-var upgraders = 20;
+var upgraders = 10;
+var builders = 10;
 var guards = 0;
 
 if(Game.spawns.Spawn1.energy >= 300) {
@@ -35,7 +36,7 @@ for(var name in Game.creeps) {
             upgrader(creep);
             break;
         case 'builder':
-            upgrader(creep);
+            builder(creep);
             break;
         case 'guard':
             guard(creep);
