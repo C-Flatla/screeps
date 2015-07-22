@@ -34,6 +34,9 @@ for(var name in Game.creeps) {
         case 'upgrader':
             upgrader(creep);
             break;
+        case 'builder':
+            upgrader(creep);
+            break;
         case 'guard':
             guard(creep);
         default:
