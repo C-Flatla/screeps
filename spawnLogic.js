@@ -16,7 +16,7 @@ module.exports = {
     generateCreep: function (role) {
         var harvesterBody = [WORK, WORK, MOVE, MOVE];
         var muleBody = [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY];
-        var builderBody = [WORK, WORK, CARRY, MOVE];
+        var builderBody = [WORK, CARRY, CARRY, MOVE, MOVE];
         var body;
 
         switch(role) {
