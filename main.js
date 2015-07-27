@@ -6,28 +6,28 @@ var upgrader = require('upgrader');
 var builder = require('builder');
 var defaultCreep = require('defaultCreep');
 
-var totalCreeps = 19;
-var harvesters = 2;
-var mules = 2;
-var upgraders = 10;
-var builders = 5;
-var guards = 0;
+// var totalCreeps = 19;
+// var harvesters = 2;
+// var mules = 2;
+// var upgraders = 10;
+// var builders = 5;
+// var guards = 0;
 
-if(Game.spawns.Spawn1.energy >= 300) {
-    if(_.isEmpty(Game.creeps)) {
-        spawnLogic.generateCreep('default');
-    } else if(spawnLogic.getCreepNumber('harvester') < harvesters) {
-        spawnLogic.generateCreep('harvester');
-    } else if(spawnLogic.getCreepNumber('mule') < mules) {
-        spawnLogic.generateCreep('mule');
-    } else if(spawnLogic.getCreepNumber('upgrader') < upgraders) {
-        spawnLogic.generateCreep('upgrader');
-    } else if(spawnLogic.getCreepNumber('builder') < builders) {
-        spawnLogic.generateCreep('builder');
-    } else if(spawnLogic.getCreepNumber('guard') < guards) {
-        spawnLogic.generateCreep('guard');
-    }
-}
+// if(Game.spawns.Spawn1.energy >= 300) {
+//     if(_.isEmpty(Game.creeps)) {
+//         spawnLogic.generateCreep('default');
+//     } else if(spawnLogic.getCreepNumber('harvester') < harvesters) {
+//         spawnLogic.generateCreep('harvester');
+//     } else if(spawnLogic.getCreepNumber('mule') < mules) {
+//         spawnLogic.generateCreep('mule');
+//     } else if(spawnLogic.getCreepNumber('upgrader') < upgraders) {
+//         spawnLogic.generateCreep('upgrader');
+//     } else if(spawnLogic.getCreepNumber('builder') < builders) {
+//         spawnLogic.generateCreep('builder');
+//     } else if(spawnLogic.getCreepNumber('guard') < guards) {
+//         spawnLogic.generateCreep('guard');
+//     }
+// }
 
 for(var name in Game.creeps) {
     var creep = Game.creeps[name];
