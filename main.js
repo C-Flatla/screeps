@@ -6,7 +6,7 @@ var upgrader = require('upgrader');
 var builder = require('builder');
 var defaultCreep = require('defaultCreep');
 
-var totalCreeps = 11;
+var harvesterCreeps = 4;
 var harvesters = 2;
 var mules = 2;
 var upgraders = 4;
@@ -40,10 +40,10 @@ for(var name in Game.creeps) {
             mule(creep);
             break;
         case 'upgrader':
-            upgrader(creep, Object.keys(Game.creeps).length >= totalCreeps);
+            upgrader(creep, (spawnLogic.getCreepNumber('harvester') + spawnLogic.getCreepNumber('mule')) >= harvesterCreeps);
             break;
         case 'builder':
-            builder(creep, Object.keys(Game.creeps).length >= totalCreeps);
+            builder(creep, (spawnLogic.getCreepNumber('harvester') + spawnLogic.getCreepNumber('mule')) >= harvesterCreeps);
             break;
         case 'guard':
             guard(creep);
