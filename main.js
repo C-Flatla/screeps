@@ -40,10 +40,10 @@ for(var name in Game.creeps) {
             mule(creep);
             break;
         case 'upgrader':
-            upgrader(creep, Object.keys(Game.creeps).length === totalCreeps);
+            upgrader(creep, Object.keys(Game.creeps).length >= totalCreeps);
             break;
         case 'builder':
-            builder(creep, Object.keys(Game.creeps).length === totalCreeps);
+            builder(creep, Object.keys(Game.creeps).length >= totalCreeps);
             break;
         case 'guard':
             guard(creep);
