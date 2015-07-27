@@ -12,12 +12,10 @@ var upgraders = 10;
 var builders = 10;
 var guards = 0;
 
-if(_.isEmpty(Game.creeps) && Game.spawns.Spawn1.energy >= 300) {
-    spawnLogic.generateCreep('default');
-}
-
 if(Game.spawns.Spawn1.energy >= 300) {
-    if(spawnLogic.getCreepNumber('harvester') < harvesters) {
+    if(_.isEmpty(Game.creeps)) {
+        spawnLogic.generateCreep('default');
+    } else if(spawnLogic.getCreepNumber('harvester') < harvesters) {
         spawnLogic.generateCreep('harvester');
     } else if(spawnLogic.getCreepNumber('mule') < mules) {
         spawnLogic.generateCreep('mule');
