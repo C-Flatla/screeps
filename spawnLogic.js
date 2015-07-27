@@ -34,7 +34,7 @@ module.exports = {
                 body = builderBody;
                 break;
             default:
-                body = [WORK, MOVE, CARRY];
+                body = [WORK, MOVE, MOVE, CARRY, CARRY];
                 break;
         }
 
