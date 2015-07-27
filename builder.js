@@ -4,7 +4,6 @@ module.exports = function (creep, surplusEnergy) {
         if(creep.carry.energy === 0) {
             creep.moveTo(spawn);
             spawn.transferEnergy(creep, (creep.getActiveBodyparts(CARRY) * 50));
-            }
         } else {
             var target = creep.pos.findClosest(FIND_CONSTRUCTION_SITES);
             if(target) {
