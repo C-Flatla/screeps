@@ -40,7 +40,7 @@ for(var name in Game.creeps) {
             mule(creep);
             break;
         case 'upgrader':
-            upgrader(creep);
+            upgrader(creep, totalCreeps);
             break;
         case 'builder':
             builder(creep, totalCreeps);
