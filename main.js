@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var spawnLogic = require('spawnLogic');
 var harvester = require('harvester');
 var mule = require('mule');
@@ -10,6 +11,10 @@ var mules = 2;
 var upgraders = 10;
 var builders = 10;
 var guards = 0;
+
+if(_.isEmpty(Game.creeps) && Game.spawns.Spawn1.energy >= 300) {
+    spawnLogic.generateCreep('default');
+}
 
 if(Game.spawns.Spawn1.energy >= 300) {
     if(spawnLogic.getCreepNumber('harvester') < harvesters) {
