@@ -6,7 +6,7 @@ var upgrader = require('upgrader');
 var builder = require('builder');
 var defaultCreep = require('defaultCreep');
 
-var totalCreeps = 12;
+var totalCreeps = 11;
 var harvesters = 2;
 var mules = 2;
 var upgraders = 4;
