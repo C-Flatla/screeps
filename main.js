@@ -9,7 +9,7 @@ var defaultCreep = require('defaultCreep');
 var totalCreeps = 12;
 var harvesters = 2;
 var mules = 2;
-var upgraders = 5;
+var upgraders = 4;
 var builders = 3;
 var guards = 0;
 
