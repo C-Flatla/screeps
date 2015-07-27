@@ -1,16 +1,18 @@
-module.exports = function (creep, totalCreeps) {
+module.exports = function (creep, surplusEnergy) {
     var spawn = Game.spawns.Spawn1;
-    if(creep.carry.energy === 0) {
-        creep.moveTo(spawn);
-        // Only give energy to creep if the creep supply is full
-        if(Object.keys(Game.creeps).length === totalCreeps) {
+    if(surplusEnergy) {
+        if(creep.carry.energy === 0) {
+            creep.moveTo(spawn);
             spawn.transferEnergy(creep, (creep.getActiveBodyparts(CARRY) * 50));
+            }
+        } else {
+            var target = creep.pos.findClosest(FIND_CONSTRUCTION_SITES);
+            if(target) {
+                creep.moveTo(target);
+                creep.build(target);
+            }
         }
     } else {
-        var target = creep.pos.findClosest(FIND_CONSTRUCTION_SITES);
-        if(target) {
-            creep.moveTo(target);
-            creep.build(target);
-        }
+        creep.moveTo(Game.flags.builderStagingFlag);
     }
 };
