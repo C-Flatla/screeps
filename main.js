@@ -10,7 +10,7 @@ var harvesterCreeps = 4;
 var harvesters = 2;
 var mules = 2;
 var upgraders = 20;
-var builders = 0;
+var builders = 2;
 var guards = 0;
 
 if(Game.spawns.Spawn1.energy >= 300) {
