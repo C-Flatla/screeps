@@ -1,16 +1,8 @@
 module.exports = {
     getCreepNumber: function (role) {
-        var creepNames = Object.keys(Game.creeps),
-            total = 0;
-
-        creepNames.forEach(function(name) {
-            var creep = Game.creeps[name];
-            if(creep.memory.role === role) {
-                total += 1;
-            }
-        });
-
-        return total;
+        return _.filter(Game.creeps, function(creep) {
+            return creep.memory.role === role;
+        }).length
     },
 
     generateCreep: function (role) {
