@@ -9,10 +9,21 @@ module.exports = function (creep, surplusEnergy) {
             creep.moveTo(Game.flags.builderStagingFlag);
         }
     } else {
-        var target = creep.pos.findClosest(FIND_CONSTRUCTION_SITES);
-        if(target) {
-            creep.moveTo(target);
-            creep.build(target);
+        var constructionSites = creep.room.find(FIND_CONSTRUCTION_SITES);
+        if(constructionSites.length) {
+            creep.moveTo(constructionSites[0]);
+            creep.build(constructionSites[0]);
+        } else {
+            var repairSites = creep.room.find(FIND_MY_STRUCTURES, {
+                filter: function(target) {
+                    return target.hits < (target.hitsMax / 2);
+                }
+            });
+
+            if(repairSites.length) {
+                creep.moveTo(repairSites[0]);
+                creep.repair(repairSites[0]);
+            }
         }
     }
 };
