@@ -1,4 +1,3 @@
-var _ = require('lodash');
 var spawnLogic = require('spawnLogic');
 var harvester = require('harvester');
 var mule = require('mule');
