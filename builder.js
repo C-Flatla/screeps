@@ -10,10 +10,9 @@ module.exports = function (creep, surplusEnergy) {
         }
     } else {
         var constructionSites = creep.room.find(FIND_CONSTRUCTION_SITES);
-        var repairSites = creep.room.find(FIND_MY_STRUCTURES, {
-                filter: function(target) {
-                    return target.hits < (target.hitsMax / 2);
-                }
+        var repairSites = creep.room.find(FIND_STRUCTURES,
+            function(structure) {
+                return (structure.structureType === STRUCTURE_ROAD) && (structure.hits < (structure.hitsMax / 2));
             });
 
         if(constructionSites.length) {
