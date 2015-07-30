@@ -16,12 +16,12 @@ module.exports = function (creep, surplusEnergy) {
             }
         });
 
-        if(constructionSites.length) {
-            creep.moveTo(constructionSites[0]);
-            creep.build(constructionSites[0]);
-        } else if(repairSites.length) {
+        if(repairSites.length) {
             creep.moveTo(repairSites[0]);
             creep.repair(repairSites[0]);
+        } else if(constructionSites.length) {
+            creep.moveTo(constructionSites[0]);
+            creep.build(constructionSites[0]);
         } else {
             creep.moveTo(Game.flags.builderStagingFlag);
         }
