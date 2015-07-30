@@ -8,8 +8,8 @@ var defaultCreep = require('defaultCreep');
 var harvesterCreeps = 4;
 var harvesters = 2;
 var mules = 2;
-var upgraders = 12;
-var builders = 2;
+var upgraders = 10;
+var builders = 4;
 var guards = 0;
 
 if(Game.spawns.Spawn1.energy >= 300) {
