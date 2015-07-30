@@ -5,11 +5,11 @@ var upgrader = require('upgrader');
 var builder = require('builder');
 var defaultCreep = require('defaultCreep');
 
-var harvesterCreeps = 4;
+var necessaryCreeps = 8;
 var harvesters = 2;
 var mules = 2;
-var upgraders = 10;
 var builders = 4;
+var upgraders = 10;
 var guards = 0;
 
 if(Game.spawns.Spawn1.energy >= 300) {
@@ -22,12 +22,12 @@ if(Game.spawns.Spawn1.energy >= 300) {
     } else if(spawnLogic.getCreepNumber('mule') < mules) {
         console.log('Generating mule creep');
         spawnLogic.generateCreep('mule');
-    } else if(spawnLogic.getCreepNumber('upgrader') < upgraders) {
-        console.log('Generating upgrader creep');
-        spawnLogic.generateCreep('upgrader');
     } else if(spawnLogic.getCreepNumber('builder') < builders) {
         console.log('Generating builder creep');
         spawnLogic.generateCreep('builder');
+    } else if(spawnLogic.getCreepNumber('upgrader') < upgraders) {
+        console.log('Generating upgrader creep');
+        spawnLogic.generateCreep('upgrader');
     } else if(spawnLogic.getCreepNumber('guard') < guards) {
         console.log('Generating guard creep');
         spawnLogic.generateCreep('guard');
@@ -45,10 +45,10 @@ for(var name in Game.creeps) {
             mule(creep);
             break;
         case 'upgrader':
-            upgrader(creep, (spawnLogic.getCreepNumber('harvester') + spawnLogic.getCreepNumber('mule')) >= harvesterCreeps);
+            upgrader(creep, (spawnLogic.getCreepNumber('harvester') + spawnLogic.getCreepNumber('mule') + spawnLogic.getCreepNumber('builder')) >= necessaryCreeps);
             break;
         case 'builder':
-            builder(creep, (spawnLogic.getCreepNumber('harvester') + spawnLogic.getCreepNumber('mule')) >= harvesterCreeps);
+            builder(creep, (spawnLogic.getCreepNumber('harvester') + spawnLogic.getCreepNumber('mule') + spawnLogic.getCreepNumber('builder')) >= necessaryCreeps);
             break;
         case 'guard':
             guard(creep);
