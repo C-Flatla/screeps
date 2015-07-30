@@ -14,16 +14,22 @@ var guards = 0;
 
 if(Game.spawns.Spawn1.energy >= 300) {
     if(_.isEmpty(Game.creeps)) {
+        console.log('Generating default creep');
         spawnLogic.generateCreep('default');
     } else if(spawnLogic.getCreepNumber('harvester') < harvesters) {
+        console.log('Generating harvester creep');
         spawnLogic.generateCreep('harvester');
     } else if(spawnLogic.getCreepNumber('mule') < mules) {
+        console.log('Generating mule creep');
         spawnLogic.generateCreep('mule');
     } else if(spawnLogic.getCreepNumber('upgrader') < upgraders) {
+        console.log('Generating upgrader creep');
         spawnLogic.generateCreep('upgrader');
     } else if(spawnLogic.getCreepNumber('builder') < builders) {
+        console.log('Generating builder creep');
         spawnLogic.generateCreep('builder');
     } else if(spawnLogic.getCreepNumber('guard') < guards) {
+        console.log('Generating guard creep');
         spawnLogic.generateCreep('guard');
     }
 }
