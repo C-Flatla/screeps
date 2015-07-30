@@ -46,7 +46,11 @@ for(var name in Game.creeps) {
             break;
         case 'guard':
             guard(creep);
-        default:
+            break;
+        case 'default':
             defaultCreep(creep);
+            break;
+        default:
+            break;
     }
 }
